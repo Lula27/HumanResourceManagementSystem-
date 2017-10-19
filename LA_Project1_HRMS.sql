@@ -9,6 +9,11 @@ CREATE DATABASE employeeLorettaAgyemang;
 SELECT * FROM sys.databases
 ORDER BY create_date; 
 
+# see tables 
+USE employeeLorettaAgyemang 
+GO
+SELECT * FROM INFORMATION_SCHEMA.TABLES; 
+
 # make country tbl 
 # make _state tbl 
 
@@ -23,18 +28,13 @@ CREATE TABLE State (
 	State_Name nvarchar(50) NOT NULL
 );
 
-#testing 123
-CREATE TABLE Orders (
-	OrderID int NOT NULL PRIMARY KEY,
-	OrderNumber int NOT NULL,
-	PersonID int FOREIGN KEY REFERENCES Persons(PersonID) 
-);
 
-#Not working - figure why 
 CREATE TABLE City (
 	City_Id numeric(10) IDENTITY(1,1) PRIMARY KEY NOT NULL,
-	State_Id numeric(10) NOT NULL FOREIGN KEY REFERENCES State(State_Id) 
-	City_Name nvarchar(50) NOT NULL
+	City_Name nvarchar(50) NOT NULL,
+	State_Id numeric(10) NOT NULL 
+	FOREIGN KEY (State_Id)
+	REFERENCES State(State_Id) 
 );
 
 # Not working 
