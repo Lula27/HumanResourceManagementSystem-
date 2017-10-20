@@ -37,11 +37,11 @@ CREATE TABLE City (
 	REFERENCES State(State_Id) 
 );
 
-# Not working 
+
 CREATE TABLE Designation (
 	Desig_Id numeric(10) IDENTITY(1,1) PRIMARY KEY NOT NULL,
-	Desig_Name nvarchar(50) NOT NULL UNIQUE 
-	Desig_Description nvarchar(300) NOT NULL 
+	Desig_Description nvarchar(300) NOT NULL, 
+	Desig_Name nvarchar(50) NOT NULL UNIQUE 	
 );
 
 CREATE TABLE Employee_Details (
