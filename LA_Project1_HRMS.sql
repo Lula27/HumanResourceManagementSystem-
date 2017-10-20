@@ -22,6 +22,7 @@ CREATE TABLE Country (
 	Country_Name nvarchar(50) NOT NULL UNIQUE
 );
 
+
 CREATE TABLE State (
 	State_Id numeric(10) IDENTITY(1,1) PRIMARY KEY NOT NULL,
 	Country_Id numeric(10) NOT NULL,
@@ -51,7 +52,6 @@ CREATE TABLE Employee_Details (
 	Emp_Last_Name nvarchar(50) NOT NULL,
 	Emp_Address1 nvarchar(100) NOT NULL,
 	Emp_Address2 nvarchar(100) NULL,
-	Emp_Country_Id numeric(10) NOT NULL,
 	Emp_Zip numeric(5) NOT NULL, 
 	Emp_Mobile numeric(10) NOT NULL,
 	Emp_Gender bit NOT NULL DEFAULT 0, 
@@ -59,13 +59,15 @@ CREATE TABLE Employee_Details (
 	Desig_Id numeric(10) NOT NULL,
 	Emp_DOB datetime NOT NULL,
 	Emp_JoinDate datetime NOT NULL,
-	Emp_Country_Id numeric(10) NOT NULL
-	FOREIGN KEY (Emp_Country_Id) 
-	REFERENCES Country (Country_Id)
-	Emp_State_Id numeric(10) NOT NULL
+	Emp_Country_Id numeric(10) NOT NULL 
+	FOREIGN KEY (Emp_Country_Id)
+	REFERENCES Country(Country_Id), 
+	Emp_State_Id numeric(10) NOT NULL 
 	FOREIGN KEY (Emp_State_Id)
-	REFERENCES State (State_Id)
+	REFERENCES State(State_Id),
 	Emp_City_Id numeric(10) NOT NULL
 	FOREIGN KEY (Emp_City_Id)
-	REFERENCES City (City_Id) 
+	REFERENCES City(City_Id)
 );
+
+
