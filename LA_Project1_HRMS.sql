@@ -70,4 +70,21 @@ CREATE TABLE Employee_Details (
 	REFERENCES City(City_Id)
 );
 
+CREATE TABLE Salary (
+	Salary_Id numeric(10) IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	Emp_Salary_Change_Year datetime NOT NULL,
+	Emp_Salary decimal(10,2) NOT NULL,  
+	Emp_Id numeric(10) NOT NULL
+	FOREIGN KEY (Emp_Id) 
+	REFERENCES Employee_Details(Emp_Id) 
+);
+
+CREATE TABLE Employee_Documents (
+	Emp_Doc_Id numeric(10) IDENTITY(1,1) PRIMARY KEY NOT NULL, 
+	Emp_Doc_Name nvarchar(30) NOT NULL,
+	Emp_Doc_Desc nvarchar(150) NULL,
+	Emp_Id numeric(10) NOT NULL  
+	FOREIGN KEY(Emp_Id)
+	REFERENCES Employee_Details(Emp_Id)
+); 
 
