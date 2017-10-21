@@ -133,10 +133,15 @@ VALUES
 	('Yemen'),
 	('Zimbabwe'); 
 
+#See tbls 
+SELECT * FROM Country; 
+
+SELECT * FROM State;
+
 
 INSERT INTO State (State_Name) 
 VALUES 
-	('Badakhshan'),
+	('Badakhshan'), 
 	('Badghis'),
 	('Baghlan'),
 	('Berat'),
@@ -191,3 +196,50 @@ VALUES
 	('Ataq'),
 	('Bulawayo'),
 	('New Jersey'); 
+
+
+INSERT INTO City (City_Name) 
+VALUES 
+	('Jurm'), 
+	('Abbakhsh'), 
+	('Baglan'), 
+	('Berat'), 
+	('Burrel'), 
+	('Durres'), 
+	('Algiers'), 
+	('Amsthas'), 
+	('Aboucha'),
+	('Canillo'),
+	('Ordino'),
+	('Hobart'),
+	('Melbourne'),
+	('Eisenstadt'),
+	('Anchorage'),
+	('Fairbanks'),
+	('College'),
+	('Kodiak'),
+	('Meadow Lakes'), 
+	('Houston'),
+	('Dallas'),
+	('Austin'),
+	('Fort Worth'),
+	('New York'),
+	('Buffalo'),
+	('Rochester'),
+	('Syracuse'),
+	('Albany'),
+	('Los Angeles'),
+	('San Diego'),
+	('San Francisco'),
+	('Oakland'),
+	('Sacremento'),
+	('Newark'); 
+	
+INSERT INTO Designation(Desig_Name, Desig_Description) 
+VALUES ('Project Manager', 'plan, budget, oversee and document all aspects of the specific project'),
+		('Software Developer','design, installation, testing and maintenance of software systems'), 
+		('Team Leader','provides direction, instructions and guidance to a group'), 
+		('Business Analyst','develop technical solutions to business problems, or to advance sales efforts'), 
+		('Design Engineer','study, research and develop ideas for new products and the systems used to make them'), 
+		('Tech Lead','responsible for leading a development team');  
+	
