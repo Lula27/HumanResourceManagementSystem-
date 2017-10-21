@@ -90,7 +90,6 @@ CREATE TABLE Employee_Documents (
 
 
 INSERT INTO Country (Country_Name)
-
 VALUES 
 	('Afghanistan'), 
 	('Albania'),
@@ -135,3 +134,60 @@ VALUES
 	('Zimbabwe'); 
 
 
+INSERT INTO State (State_Name) 
+VALUES 
+	('Badakhshan'),
+	('Badghis'),
+	('Baghlan'),
+	('Berat'),
+	('Diber'),
+	('Durres'),
+	('Adrar'),
+	('Blida'),
+	('Tipaza'),
+	('Canillo'),
+	('Ordino'),
+	('Tasmania'),
+	('Victoria'),
+	('Burgenland'), 
+	('Tirol'),
+	('Bahia'),
+	('Roraima'),
+	('Dhaka'),
+	('Jilin'),
+	('Atacama'),
+	('Capital'),
+	('Suhaj'),
+	('Tigray'),
+	('Auvergne'),
+	('South Savo'),
+	('Bremen'),
+	('Ajaria'),
+	('Crete'),
+	('Eastern District'),
+	('Baranya Megye'),
+	('Kerala'),
+	('Cavan'),
+	('Akita'),
+	('Hawalli'),
+	('Central'),
+	('Diekirch'),
+	('Colima'),
+	('Eastern'),
+	('Dhofar'),
+	('Lodzkie'), 
+	('Al Khawr'), 
+	('Altay'), 
+	('Free State'), 
+	('Bern'), 
+	('Idlib'), 
+	('Chai Nat'),
+	('Alaska'),
+	('Texas'),
+	('New York'),
+	('California'),
+	('Abim'),
+	('Bac Can'),
+	('Ataq'),
+	('Bulawayo'),
+	('New Jersey'); 
