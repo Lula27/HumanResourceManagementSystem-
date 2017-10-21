@@ -88,3 +88,50 @@ CREATE TABLE Employee_Documents (
 	REFERENCES Employee_Details(Emp_Id)
 ); 
 
+
+INSERT INTO Country (Country_Name)
+
+VALUES 
+	('Afghanistan'), 
+	('Albania'),
+	('Algeria'),
+	('Andorra'),
+	('Australia'),
+	('Austria'),
+	('Brazil'),
+	('Bangladesh'),
+	('China'),
+	('Chile'),
+	('Denmark'),
+	('Egypt'),
+	('Ethiopia'),
+	('France'),
+	('Finland'),
+	('Germany'),
+	('Georgia'),
+	('Greece'),
+	('Hong Kong'),
+	('Hungary'),
+	('India'),
+	('Ireland'),
+	('Japan'),
+	('Kuwait'),
+	('Kenya'),
+	('Luxembourg'),
+	('Mexico'),
+	('Nepal'),
+	('Oman'),
+	('Poland'),
+	('Qatar'),
+	('Russia'),
+	('South Africa'),
+	('Switzerland'),
+	('Syria'),
+	('Thailand'),
+	('United States'),
+	('Uganda'),
+	('Vietnam'),
+	('Yemen'),
+	('Zimbabwe'); 
+
+
