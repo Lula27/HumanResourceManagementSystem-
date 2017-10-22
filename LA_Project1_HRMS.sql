@@ -304,6 +304,70 @@ SELECT * FROM Employee_Details
 WHERE Emp_Active=0; 
 
 
+CREATE PROCEDURE rename 
+AS 
 SELECT Emp_First_Name, Emp_Last_Name, Emp_Middle_Name
+FROM Employee_Details
+sp_RENAME 'Employee_Details.[Emp_First_Name]','[FirstName]', 'COLUMN'
+sp_RENAME 'Employee_Details.[Emp_Last_Name]','[LastName]', 'COLUMN'
+sp_RENAME 'Employee_Details.[Emp_Middle_Name]','[MiddleName]', 'COLUMN';  
+
+
+CREATE PROCEDURE totalEmp
+AS 
+SELECT COUNT (Emp_Active)
+FROM Employee_Details; 
+
+
+CREATE PROCEDURE totalEmp
+AS 
+SELECT COUNT (Emp_Active)
+FROM Employee_Details
+WHERE MiddleName IS NOT NULL; 
+
+
+
+CREATE PROCEDURE changna
+AS 
+SELECT FirstName, LastName, MiddleName 
+FROM Employee_Details
+UPDATE Employee_Details
+SET MiddleName = 'Not Applicable'
+WHERE
+MiddleName IS NULL; 
+
+
+CREATE PROCEDURE combine
+AS 
+SELECT FirstName, MiddleName, LastName 
+CONCAT(FirstName, ' ', MiddleName, ' ', LastName, ' ')
+FROM Employee_Details
+PRINT CONCAT(FirstName, ' ', MiddleName, ' ', LastName, ' '); 
+
+
+CREATE PROCEDURE alfcountryname
+AS 
+SELECT *
 FROM Employee_Details 
-ALTER TABLE Employee_Details  SP_RENAME 'Emp_First_Name', 'First Name';
+INNER JOIN Country ON Employee_Details.Emp_Country_Id = Country_Id
+ORDER BY Country_Name ASC;
+
+
+CREATE PROCEDURE ascfirstname 
+AS 
+SELECT FirstName
+FROM Employee_Details 
+WHERE Emp_Id <= 10 
+ORDER BY FirstName ASC; 
+
+
+
+CREATE PROCEDURE adcity
+AS 
+SELECT * 
+FROM Employee_Details  
+INNER JOIN City ON Employee_Details.Emp_City_Id = City_Id
+WHERE City_Name LIKE 'A%s%D'; 
+
+
+
