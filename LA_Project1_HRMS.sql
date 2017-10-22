@@ -71,7 +71,7 @@ CREATE TABLE Employee_Details (
 	Emp_City_Id numeric(10) NOT NULL
 	FOREIGN KEY (Emp_City_Id)
 	REFERENCES City(City_Id)
-);
+); 
  
 
 CREATE TABLE Salary (
@@ -279,3 +279,20 @@ ORDER BY State_Name ASC;
 EXEC orderstcountnames; 
 
 
+CREATE PROCEDURE firstcountryname
+AS  
+SELECT Country_Name 
+FROM Country 
+WHERE Country_Id <= 3 
+ORDER BY Country_Name ASC; 
+
+
+CREATE PROCEDURE frnamea
+AS 
+SELECT Emp_First_Name FROM Employee_Details
+WHERE Emp_First_Name LIKE 'a%'; 
+
+CREATE PROCEDURE lsnamea
+AS 
+SELECT Emp_First_Name FROM Employee_Details
+WHERE Emp_First_Name LIKE '%a'; 
