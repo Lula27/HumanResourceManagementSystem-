@@ -371,3 +371,61 @@ WHERE City_Name LIKE 'A%s%D';
 
 
 
+CREATE PROCEDURE empdob 
+AS 
+SELECT FirstName, LastName, MiddleName, Country_Name, Emp_DOB
+FROM Employee_Details
+WHERE Emp_DOB BETWEEN '1978-05-12' AND '1986-08-01'; 
+
+
+CREATE PROCEDURE highestpay
+AS 
+SELECT FirstName, LastName, Country_Name 
+FROM Employee_Details
+WHERE Emp_Salary = 105000.00; 
+
+
+CREATE PROCEDURE individual  
+AS 
+SELECT FirstName, LastName, MiddleName, Country_Name 
+FROM Employee_Details
+WHERE Desig_Id IS 0 AND Emp_Salary = 105000.00;
+
+
+CREATE PROCEDURE payrange  
+AS 
+SELECT FirstName, LastName, MiddleName, Country_Name, Desig_Id 
+FROM Employee_Details
+WHERE Emp_DOB BETWEEN '35000.00' AND '89200.00'; 
+
+
+CREATE PROCEDURE thrcharacters  
+AS 
+SELECT SUBSTRING(Employee_Details, 1,3); 
+
+
+
+CREATE PROCEDURE thrcharacters showmoney 
+AS 
+SELECT REPLACE('a', '$'); 
+FROM Emp_First_Name; 
+
+
+WITH 
+	cteEmpDetails (First Name, Year, Month, Day)
+	AS
+	(
+	SELECT Emp_First_Name, Emp_JoinDate
+	FROM Employee_Details
+	);
+
+CREATE PROCEDURE employeedetails
+AS 
+SELECT cteEmpDetails 
+WHERE Year = '2014'; 
+
+
+CREATE PROCEDURE employeedetails
+AS 
+SELECT cteEmpDetails 
+WHERE Year > '01-01-2014'; 
