@@ -296,3 +296,14 @@ CREATE PROCEDURE lsnamea
 AS 
 SELECT Emp_First_Name FROM Employee_Details
 WHERE Emp_First_Name LIKE '%a'; 
+
+
+CREATE PROCEDURE inactive
+AS 
+SELECT * FROM Employee_Details
+WHERE Emp_Active=0; 
+
+
+SELECT Emp_First_Name, Emp_Last_Name, Emp_Middle_Name
+FROM Employee_Details 
+ALTER TABLE Employee_Details  SP_RENAME 'Emp_First_Name', 'First Name';
