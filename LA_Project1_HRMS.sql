@@ -429,3 +429,27 @@ CREATE PROCEDURE employeedetails
 AS 
 SELECT cteEmpDetails 
 WHERE Year > '01-01-2014'; 
+
+
+WITH 
+	ctedesalary (DesignationName, totalSalary, DesigName)
+	AS
+	(
+	SELECT Desig_Id, SUM(salary), Desig_Name
+	FROM Employee_Details
+	);
+
+
+CREATE PROCEDURE designame
+AS 
+SELECT DesigName, COUNT(DesignationName); 
+
+
+
+WITH 
+	noempl (JoinedYear, JoinedMonth, Numberemployees)
+	AS
+	(
+	SELECT Emp_JoinDate.Year, Emp_JoinDate.Month, COUNT(Emp_Id)
+	FROM Employee_Details
+	);
