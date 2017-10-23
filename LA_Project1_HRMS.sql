@@ -453,3 +453,9 @@ WITH
 	SELECT Emp_JoinDate.Year, Emp_JoinDate.Month, COUNT(Emp_Id)
 	FROM Employee_Details
 	);
+
+CREATE PROCEDURE avgsalary 
+AS 
+SELECT Desig_Id, AVG(Emp_Salary) 
+FROM Employee_Details
+ORDER BY Emp_Salary ASC; 
