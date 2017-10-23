@@ -84,7 +84,6 @@ CREATE TABLE Salary (
 );
 
 SELECT * FROM Salary; 
-
 CREATE TABLE Employee_Documents (
 	Emp_Doc_Id numeric(10) IDENTITY(1,1) PRIMARY KEY NOT NULL, 
 	Emp_Doc_Name nvarchar(30) NOT NULL,
@@ -93,6 +92,7 @@ CREATE TABLE Employee_Documents (
 	FOREIGN KEY(Emp_Id)
 	REFERENCES Employee_Details(Emp_Id)
 ); 
+
 
 
 INSERT INTO Country (Country_Name)
@@ -258,6 +258,15 @@ SELECT * FROM Employee_Details;
 SELECT * FROM Salary;
 
 #1 Stored Procedures...later  
+
+CREATE PROCEDURE empdata
+AS 
+SELECT Emp_First_Name, Emp_Address1, Country_Name, State_Name, City_Name, Desig_Id
+FROM Employee_Details
+LEFT JOIN Country ON Employee_Details.Emp_Country_Id = Country.Country_Id, 
+LEFT JOIN State ON Employee_Details.Emp_State_Id = State.State_Id,
+LEFT JOIN City ON Employee_Details.Emp_City_Id = City.City_Name; 
+
 
 CREATE PROCEDURE collectnationalinfo 
 AS 
