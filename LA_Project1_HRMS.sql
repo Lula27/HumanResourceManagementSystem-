@@ -459,3 +459,53 @@ AS
 SELECT Desig_Id, AVG(Emp_Salary) 
 FROM Employee_Details
 ORDER BY Emp_Salary ASC; 
+
+
+CREATE PROCEDURE missingsal
+AS 
+SELECT Emp_Id
+FROM Employee_Details
+WHERE Emp_Id !IN Employee_Details; 
+
+
+CREATE PROCEDURE slavelabor
+AS 
+SELECT Emp_First_Name, SUM(Emp_Salary) 
+FROM Employee_Details
+LEFT OUTER JOIN Emp_Salary ON Employee_Details.Desig_Id = Salary.Emp_Id;
+
+ 
+
+CREATE PROCEDURE toppercent
+AS 
+SELECT TOP(10) PERCENT 
+Emp_Salary
+FROM Salary
+WHERE Salary_Id IS 1
+CREATE PROCEDURE toppercent
+AS 
+SELECT TOP(20) PERCENT 
+Emp_Salary
+FROM Salary
+WHERE Salary_Id IS 2
+SELECT TOP(15) PERCENT 
+Emp_Salary
+FROM Salary
+WHERE Salary_Id IS 2
+SELECT TOP(30) PERCENT 
+Emp_Salary
+FROM Salary
+WHERE Salary_Id IS NOT 1,2,3; 
+
+
+
+CREATE PROCEDURE daysworked 
+AS 
+SELECT SUM(Emp_JoinDate)
+FROM Employee_Details; 
+
+
+CREATE PROCEDURE highestappraisal 
+AS 
+SELECT DIFFERENCE(Emp_Salary, Emp_Salary_Change_Year) 
+FROM Employee_Details; 
