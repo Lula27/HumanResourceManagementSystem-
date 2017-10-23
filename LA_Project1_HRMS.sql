@@ -509,3 +509,28 @@ CREATE PROCEDURE highestappraisal
 AS 
 SELECT DIFFERENCE(Emp_Salary, Emp_Salary_Change_Year) 
 FROM Employee_Details; 
+
+
+WITH CTE AS 
+(
+	SELECT Emp_Id, Emp_Salary
+		RN = ROW_NUMBER() OVER (ORDER BY Emp_Salary ASC) 
+	FROM dbo.Salary 
+); 
+SELECT Emp_Id
+FROM CTE
+WHERE RN = @3rdRow 
+
+
+CREATE FUNCTION avgempsalary (@empname nvarchar, @avgsal int) 
+RETURNS char, int 
+AS 
+--Returns employee name and average salary 
+BEGIN 
+	DECLARE @empname; 
+	SELECT @empname = PRINT(Emp_First) 
+	SELECT @avgsal = AVG(Emp_Salary) 
+	FROM Employee_Details
+	RETURN @empname, @avgsal;
+END; 
+GO 
